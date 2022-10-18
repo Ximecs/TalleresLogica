@@ -9,21 +9,25 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" href="/Taller_EjercicioTrenCSS.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 
 <body>
     <div class="container-fluid vh-100 d-flex">
-        <div class="p-5 col-4 border border-success">
+        <div class="p-5 col-5 border border-success">
             <div class="row-md">
+                
                 <div class="input-group mb-3">
+                    
                     <div class="input-group-prepend-sm">
                         <span class="input-group-text rounded-left" id="inputGroup-sizing-sm">Nombre y Apellido</span>
                     </div>
-                    <input type="text" class="form-control w-10" aria-label="Default"
+                    <input type="text" class="form-control w-10 full-name" aria-label="Default"
                         aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3">
@@ -31,81 +35,63 @@
                         <span class="input-group-text border rounded-left" id="inputGroup-sizing-default">No.
                             Documento</span>
                     </div>
-                    <input type="text" class="form-control" aria-label="Default"
+                    <input type="text" class="form-control cc" aria-label="Default"
                         aria-describedby="inputGroup-sizing-default">
                 </div>
-                <div>
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected>Selecciona Vagón</option>
-                        <option value="Vagon 1">Vagon 1</option>
-                        <option value="Vagon 2">Vagon 2</option>
-                        <option value="Vagon 3">Vagon 3</option>
-                        <option value="Vagon 4">Vagon 4</option>
-                        <option value="Vagon 5">Vagon 5</option>
-                        <option value="Vagon 6">Vagon 6</option>
-                        <option value="Vagon 7">Vagon 7</option>
-                        <option value="Vagon 8">Vagon 8</option>
-                        <option value="Vagon 9">Vagon 9</option>
-                        <option value="Vagon 10">Vagon 10</option>
-                    </select>
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected>Selecciona Silla</option>
-                        <option value="Silla 2">Silla 1</option>
-                        <option value="Silla 1">Silla 2</option>
-                        <option value="Silla 3">Silla 3</option>
-                        <option value="Silla 4">Silla 4</option>
-                        <option value="Silla 5">Silla 5</option>
-                        <option value="Silla 6">Silla 6</option>
-                        <option value="Silla 7">Silla 7</option>
-                        <option value="Silla 8">Silla 8</option>
-                        <option value="Silla 9">Silla 9</option>
-                        <option value="Silla 10">Silla 10</option>
-                    </select>
-                </div>
-
+                <h4 class="seat-info">prueba</h4>
+                    
             </div>
-            <div class="input-group input-group-sm mb-3">
+            <div class="input-group input-group-md mb-3 reserve-button">
                 <button type="button" class="btn btn-primary button-save p-3 m-3 border rounded"
-                    onclick="agregarPasajeros()">Agregar Pasajeros</button>
-                <button type="button" class="btn btn-warning button-save p-3 m-3 border rounded"
-                    onclick="consultarPasajeros()">Consultar Pasajeros</button>
+                    >Reservar</button>
+            </div>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <th>Silla</th>
+                        <th>Cédula</th>
+                        <th>Nombre</th>
+                        <th>Acción</th>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
         <!-- vagones del tren -->
-        <div class="p-2 ms-2 border border-success ">
+        <div class="p-2 ms-2 ">
             <!-- vagon 1 -->
             <div class="row align-items-center">
                 <div class="col-5 border border-success m-2 d-flex justify-content-center align-items-center">
                     <div class="row border-success">
                         <h3><center>Vagón 1</center></h3>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md"onclick="seatInfo('Vagon 1 - Silla ', 1)">Silla
                                 1</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md"onclick="seatInfo('Vagon 1 - Silla ', 2)">Silla
                                 2</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 1 - Silla ', 3)">Silla
                                 3</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 1 - Silla ', 4)">Silla
                                 4</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 1 - Silla ', 5)">Silla
                                 5</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 1 - Silla ', 6)">Silla
                                 6</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 1 - Silla ', 7)">Silla
                                 7</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 1 - Silla ', 8)">Silla
                                 8</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 1 - Silla ', 9)">Silla
                                 9</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 1 - Silla ', 10)">Silla
                                 10</button>
                         </div>
 
@@ -116,33 +102,33 @@
                     <div class="row border-success">
                         <h3><center>Vagón 2</center></h3>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 2 - Silla ', 1)">Silla
                                 1</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 2 - Silla ', 2)">Silla
                                 2</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 2 - Silla ', 3)">Silla
                                 3</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 2 - Silla ', 4)">Silla
                                 4</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 2 - Silla ', 5)">Silla
                                 5</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 2 - Silla ', 6)">Silla
                                 6</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 2 - Silla ', 7)">Silla
                                 7</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 2 - Silla ', 8)">Silla
                                 8</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 2 - Silla ', 9)">Silla
                                 9</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 2 - Silla ', 10)">Silla
                                 10</button>
                         </div>
 
@@ -156,33 +142,33 @@
                     <div class="row border-success">
                         <h3><center>Vagón 3</center></h3>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 3 - Silla ', 1)">Silla
                                 1</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 3 - Silla ', 2)">Silla
                                 2</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 3 - Silla ', 3)">Silla
                                 3</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 3 - Silla ', 4)">Silla
                                 4</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 3 - Silla ', 5)">Silla
                                 5</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 3 - Silla ', 6)">Silla
                                 6</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 3 - Silla ', 7)">Silla
                                 7</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 3 - Silla ', 8)">Silla
                                 8</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 3 - Silla ', 9)">Silla
                                 9</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 3 - Silla ', 10)">Silla
                                 10</button>
                         </div>
 
@@ -193,33 +179,33 @@
                     <div class="row border-success">
                         <h3><center>Vagón 4</center></h3>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 4 - Silla ', 1)">Silla
                                 1</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 4 - Silla ', 2)">Silla
                                 2</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 4 - Silla ', 3)">Silla
                                 3</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 4 - Silla ', 4)">Silla
                                 4</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 4 - Silla ', 5)">Silla
                                 5</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 4 - Silla ', 6)">Silla
                                 6</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 4 - Silla ', 7)">Silla
                                 7</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 4 - Silla ', 8)">Silla
                                 8</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 4 - Silla ', 9)">Silla
                                 9</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 4 - Silla ', 10)">Silla
                                 10</button>
                         </div>
 
@@ -233,33 +219,33 @@
                     <div class="row border-success">
                         <h3><center>Vagón 5</center></h3>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 5 - Silla ', 1)">Silla
                                 1</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 5 - Silla ', 2)">Silla
                                 2</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 5 - Silla ', 3)">Silla
                                 3</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 5 - Silla ', 4)">Silla
                                 4</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 5 - Silla ', 5)">Silla
                                 5</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 5 - Silla ', 6)">Silla
                                 6</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 5 - Silla ', 7)">Silla
                                 7</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 5 - Silla ', 8)">Silla
                                 8</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 5 - Silla ', 9)">Silla
                                 9</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 5 - Silla ', 10)">Silla
                                 10</button>
                         </div>
 
@@ -270,33 +256,33 @@
                     <div class="row border-success">
                         <h3><center>Vagón 6</center></h3>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 6 - Silla ', 1)">Silla
                                 1</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 6 - Silla ', 2)">Silla
                                 2</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 6 - Silla ', 3)">Silla
                                 3</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 6 - Silla ', 4)">Silla
                                 4</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 6 - Silla ', 5)">Silla
                                 5</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 6 - Silla ', 6)">Silla
                                 6</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 6 - Silla ', 7)">Silla
                                 7</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 6 - Silla ', 8)">Silla
                                 8</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 6 - Silla ', 9)">Silla
                                 9</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 6 - Silla ', 10)">Silla
                                 10</button>
                         </div>
 
@@ -310,33 +296,33 @@
                     <div class="row border-success">
                         <h3><center>Vagón 7</center></h3>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 7 - Silla ', 1)">Silla
                                 1</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 7 - Silla ', 2)">Silla
                                 2</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 7 - Silla ', 3)">Silla
                                 3</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 7 - Silla ', 4)">Silla
                                 4</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 7 - Silla ', 5)">Silla
                                 5</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 7 - Silla ', 6)">Silla
                                 6</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 7 - Silla ', 7)">Silla
                                 7</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 7 - Silla ', 8)">Silla
                                 8</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 7 - Silla ', 9)">Silla
                                 9</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 7 - Silla ', 10)">Silla
                                 10</button>
                         </div>
 
@@ -347,33 +333,33 @@
                     <div class="row border-success">
                         <h3><center>Vagón 8</center></h3>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 8 - Silla ', 1)">Silla
                                 1</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 8 - Silla ', 2)">Silla
                                 2</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 8 - Silla ', 3)">Silla
                                 3</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 8 - Silla ', 4)">Silla
                                 4</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 8 - Silla ', 5)">Silla
                                 5</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 8 - Silla ', 6)">Silla
                                 6</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 8 - Silla ', 7)">Silla
                                 7</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 8 - Silla ', 8)">Silla
                                 8</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 8 - Silla ', 9)">Silla
                                 9</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 8 - Silla ', 10)">Silla
                                 10</button>
                         </div>
 
@@ -387,33 +373,33 @@
                     <div class="row border-success">
                         <h3><center>Vagón 9</center></h3>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 9 - Silla ', 1)">Silla
                                 1</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 9 - Silla ', 2)">Silla
                                 2</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 9 - Silla ', 3)">Silla
                                 3</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 9 - Silla ', 4)">Silla
                                 4</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 9 - Silla ', 5)">Silla
                                 5</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 9 - Silla ', 6)">Silla
                                 6</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 9 - Silla ', 7)">Silla
                                 7</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 9 - Silla ', 8)">Silla
                                 8</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 9 - Silla ', 9)">Silla
                                 9</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 9 - Silla ', 10)">Silla
                                 10</button>
                         </div>
 
@@ -424,33 +410,33 @@
                     <div class="row border-success">
                         <h3><center>Vagón 10</center></h3>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 10 - Silla ', 1)">Silla
                                 1</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 10 - Silla ', 2)">Silla
                                 2</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 10 - Silla ', 3)">Silla
                                 3</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 10 - Silla ', 4)">Silla
                                 4</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 10 - Silla ', 5)">Silla
                                 5</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 10 - Silla ', 6)">Silla
                                 6</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 10 - Silla ', 7)">Silla
                                 7</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 10 - Silla ', 8)">Silla
                                 8</button>
                         </div>
                         <div class="col-2 border-success m-1">
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 10 - Silla ', 9)">Silla
                                 9</button>
-                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md">Silla
+                            <button type="button" class="btn btn-warning button-save p-3 m-3 btn-square-md" onclick="seatInfo('Vagon 10 - Silla ', 10)">Silla
                                 10</button>
                         </div>
 
